@@ -38,9 +38,9 @@ def login():
         login_fb_xpath = elems.FB_LOGIN
         
         driver.switch_to.window(driver.window_handles[1])
-        driver.find_element_by_xpath(email_xpath).send_keys(USERNAME)
-        driver.find_element_by_xpath(pwd_xpath).send_keys(PASSWORD)
-        driver.find_element_by_xpath(login_fb_xpath).click()
+        driver.find_element_by_id(email_xpath).send_keys(USERNAME)
+        driver.find_element_by_id(pwd_xpath).send_keys(PASSWORD)
+        driver.find_element_by_id(login_fb_xpath).click()
         
         driver.switch_to.window(driver.window_handles[0])
         print("Logged into Tinder Successfully")

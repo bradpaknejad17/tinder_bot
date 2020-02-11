@@ -23,8 +23,8 @@ MAIN_TAG = 'main'
 MATCH_TAG = 'a'
 
 
-FB_EMAIL = '/html/body/div/div[2]/div[1]/form/div/div[1]/div/input'
-FB_PWD = '/html/body/div/div[2]/div[1]/form/div/div[2]/div/input'
-FB_LOGIN = '/html/body/div/div[2]/div[1]/form/div/div[3]/label[2]/input'
+FB_EMAIL = 'email'
+FB_PWD = 'pass'
+FB_LOGIN = 'loginbutton'
 
 TINDER_LOGIN =  '/html/body/div[2]/div/div/div/div/div[3]/div[2]/button'
