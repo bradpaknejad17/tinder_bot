@@ -25,22 +25,17 @@ def login():
     try:
         url = 'https://tinder.com/'
         driver = webdriver.Chrome()
-        # driver.maximize_window()
+        driver.maximize_window()
         driver.get(url)
         sleep(3)
 
-        tinder_login_Btn = elems.TINDER_LOGIN
-        login_btn = driver.find_element_by_xpath(tinder_login_Btn)
+        login_btn = driver.find_element_by_xpath(elems.TINDER_LOGIN)
         login_btn.click()
-
-        email_xpath = elems.FB_EMAIL
-        pwd_xpath = elems.FB_PWD
-        login_fb_xpath = elems.FB_LOGIN
         
         driver.switch_to.window(driver.window_handles[1])
-        driver.find_element_by_id(email_xpath).send_keys(USERNAME)
-        driver.find_element_by_id(pwd_xpath).send_keys(PASSWORD)
-        driver.find_element_by_id(login_fb_xpath).click()
+        driver.find_element_by_id(elems.FB_EMAIL).send_keys(USERNAME)
+        driver.find_element_by_id(elems.FB_PWD).send_keys(PASSWORD)
+        driver.find_element_by_id(elems.FB_LOGIN).click()
         
         driver.switch_to.window(driver.window_handles[0])
         print("Logged into Tinder Successfully")
@@ -53,18 +48,16 @@ def login():
 
 
 def swipeRight(driver: webdriver.Chrome):
-    like_btn = elems.LIKE_BTN
-    close_popup = elems.POPUP_BTN
     
     while True:
         try:
-            driver.find_element_by_xpath(like_btn).click()
+            driver.find_element_by_xpath(elems.LIKE_BTN).click()
             print('Keypress Like')    
             sleep(1)
 
         except Exception as ex:
             print(ex)
-            driver.find_element_by_xpath(close_popup).click()
+            driver.find_element_by_xpath(elems.POPUP_BTN).click()
 
 
 def waitForCardLoad(driver: webdriver.Chrome):
