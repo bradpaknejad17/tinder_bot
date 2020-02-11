@@ -1,0 +1,5 @@
+.DS_Store
+secrets.py
+images/*
+__pycache__/*
+pickuplines.json
